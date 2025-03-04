@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio de Sesión - Whirl Inspector</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="login-container">
+    <h1>Iniciar Sesión</h1>
+    <form class="login-form" action="#" method="POST">
+      <label for="employeeNumber">Número de Empleado</label>
+      <input
+        type="text"
+        id="employeeNumber"
+        name="employeeNumber"
+        placeholder="Tu número de empleado"
+        required
+      />
+      <label for="password">Contraseña</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Tu contraseña"
+        required
+      />
+      <button type="submit">Iniciar Sesión</button>
+      <div id="error-message" class="error-message"></div>
+    </form>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+
