@@ -1,145 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap");
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff6b35;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff8b61;
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+@keyframes floatCircle1 {
+  0% {
+    transform: translateY(0);
   }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #333333;
-    line-height: 1.6;
+  50% {
+    transform: translateY(-20px);
   }
-  
-  .hero {
-    position: relative;
-    width: 100%;
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    overflow: hidden; 
+  100% {
+    transform: translateY(0);
   }
-  
+}
+
+@keyframes floatCircle2 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatCircle3 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatCircle4 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.circle1 {
+  width: 150px;
+  height: 150px;
+  background-color: #ffa629;
+  top: 10%;
+  left: 5%;
+  animation: floatCircle1 6s ease-in-out infinite;
+}
+
+.circle2 {
+  width: 100px;
+  height: 100px;
+  background-color: #0059ff;
+  top: 20%;
+  right: 15%;
+  animation: floatCircle2 8s ease-in-out infinite;
+}
+
+.circle3 {
+  width: 80px;
+  height: 80px;
+  background-color: #ff3d3d;
+  bottom: 10%;
+  left: 15%;
+  animation: floatCircle3 7s ease-in-out infinite;
+}
+
+.circle4 {
+  width: 50px;
+  height: 50px;
+  background-color: #ffec59;
+  bottom: 15%;
+  right: 20%;
+  animation: floatCircle4 5s ease-in-out infinite;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2rem;
   }
-  
+
   .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1rem;
   }
-  
-  .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #FF6B35;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+}
+
+.story {
+  position: relative; /* Necesario para que el posicionamiento absoluto de .whirl funcione */
+  font-family: "Old Standard TT", "Arial", serif;
+  font-weight: 600;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.whirl {
+  position: absolute;
+  bottom: -10px; /* Coloca el elemento en la parte inferior */
+  left: 0; /* Coloca el elemento en la izquierda */
+  margin: 0;
+  padding: 0;
+  width: 25%;
+}
+
+/* Opcional: Asegurar que la imagen no se desborde */
+.whirl img {
+  width: 100%;
+  height: auto;
+}
+
+.circleStory1,
+.circleStory2,
+.circleStory3 {
+  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.circleStory1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.6em;
+  width: 450px;
+  height: 250px;
+  border: black solid 10px;
+  top: 8%;
+  left: 43%;
+  animation-name: fadeInScale;
+  animation-delay: 2s;
+}
+
+.circleStory2 {
+  width: 100px;
+  height: 100px;
+  border: black solid 7px;
+  top: 32%;
+  left: 33%;
+  animation-name: fadeInScale;
+  animation-delay: 1s;
+}
+
+.circleStory3 {
+  width: 50px;
+  height: 50px;
+  border: black solid 4px;
+  bottom: 50%;
+  left: 25%;
+  animation-name: fadeInScale;
+  animation-delay: 0s;
+}
+
+/* Animación */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
   }
-  
-  .btn:hover {
-    background-color: #FF8B61;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  .circles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-    pointer-events: none; 
-  }
-  
-  .circle {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.9;
-  }
-  
-  @keyframes floatCircle1 {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-20px); }
-    100% { transform: translateY(0); }
-  }
-  
-  @keyframes floatCircle2 {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-30px); }
-    100% { transform: translateY(0); }
-  }
-  
-  @keyframes floatCircle3 {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
-  }
-  
-  @keyframes floatCircle4 {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-25px); }
-    100% { transform: translateY(0); }
-  }
-  
-  .circle1 {
-    width: 150px;
-    height: 150px;
-    background-color: #FFA629;
-    top: 10%;
-    left: 5%;
-    animation: floatCircle1 6s ease-in-out infinite;
-  }
-  
-  .circle2 {
-    width: 100px;
-    height: 100px;
-    background-color: #0059FF;
-    top: 20%;
-    right: 15%;
-    animation: floatCircle2 8s ease-in-out infinite;
-  }
-  
-  .circle3 {
-    width: 80px;
-    height: 80px;
-    background-color: #FF3D3D;
-    bottom: 10%;
-    left: 15%;
-    animation: floatCircle3 7s ease-in-out infinite;
-  }
-  
-  .circle4 {
-    width: 50px;
-    height: 50px;
-    background-color: #FFEC59;
-    bottom: 15%;
-    right: 20%;
-    animation: floatCircle4 5s ease-in-out infinite;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f2f2f2;
-    font-size: 0.9rem;
-  }
-  
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-  
-    .hero p {
-      font-size: 1rem;
-    }
-  }
+}
+
+.btnStory {
+  position: absolute;
+  bottom: 10%;
+  right: 15%;
+  font-size: 2em;
+  opacity: 0;
+  animation: fadeInScale 1s ease forwards;
+  animation-delay: 3s; /* Espera a que termine el último círculo */
+}
+
+.lupa {
+  position: absolute;
+  bottom: 35%; /* Coloca el elemento en la parte inferior */
+  right: -40px; /* Coloca el elemento en la izquierda */
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: fadeInScale 1s ease forwards;
+  animation-delay: 3s;
+}
+
+.lupa img {
+  width: 100%;
+  height: auto;
+}
 
 /* ---------- Estilos para la página de Login ---------- */
 
@@ -148,7 +282,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   background-color: #f5f5f5;
   margin: 0;
 }
@@ -161,7 +295,7 @@
   background-color: #fff;
   padding: 30px;
   border-radius: 5px;
-  width: 300px; 
+  width: 300px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -183,7 +317,7 @@
 .login-form button {
   width: 100%;
   padding: 10px;
-  background-color: #FF6B35;
+  background-color: #ff6b35;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -194,12 +328,11 @@
 }
 
 .login-form button:hover {
-  background-color: #FF8B61;
+  background-color: #ff8b61;
 }
 
 .error-message {
-    color: red;
-    margin-top: 10px;
-    font-size: 0.9rem;
-  }
-  
+  color: red;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
